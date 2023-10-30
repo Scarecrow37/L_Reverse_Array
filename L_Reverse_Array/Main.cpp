@@ -20,17 +20,20 @@ void Solution()
         {1, 1, 1, 1, 1, 1, 1, 1, 1, 1},
     };
 
-    for (int row = 0; row < 9; ++row)
+    constexpr int column_size = sizeof(data[0]) / sizeof(int);
+    constexpr int row_size = sizeof(data) / sizeof(data[0]);
+
+    for (int row = 0; row < row_size; ++row)
     {
-        for (int column = 0; column < 10; ++column)
+        for (int column = 0; column < column_size; ++column)
         {
             data[row][column] = Reverse(data[row][column]);
         }
     }
 
-    for (int row = 0; row < 9; ++row)
+    for (int row = 0; row < row_size; ++row)
     {
-        for (int column = 0; column < 10; ++column)
+        for (int column = 0; column < column_size; ++column)
         {
             std::cout << data[row][column];
         }
