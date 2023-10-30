@@ -1,8 +1,16 @@
 #include <iostream>
 
-int Reverse(int target)
+int Reverse(int target, const int x, const int y)
 {
-    return static_cast<int>(!static_cast<bool>(target));
+    if (target == x)
+    {
+        target = y;
+    }
+    else if (target == y)
+    {
+        target = x;
+    }
+    return target;
 }
 
 void Solution()
@@ -27,7 +35,7 @@ void Solution()
     {
         for (int column = 0; column < column_size; ++column)
         {
-            data[row][column] = Reverse(data[row][column]);
+            data[row][column] = Reverse(data[row][column], 0, 1);
         }
     }
 
