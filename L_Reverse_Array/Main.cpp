@@ -1,6 +1,7 @@
 #include <iostream>
 
-int Reverse(int target, const int x, const int y)
+template <typename T>
+T Reverse(T target, const T x, const T y)
 {
     if (target == x)
     {
@@ -35,7 +36,7 @@ void Solution()
     {
         for (int column = 0; column < column_size; ++column)
         {
-            data[row][column] = Reverse(data[row][column], 0, 1);
+            data[row][column] = Reverse<int>(data[row][column], 0, 1);
         }
     }
 
